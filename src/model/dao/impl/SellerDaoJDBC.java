@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import db.DB;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -58,6 +59,9 @@ public class SellerDaoJDBC implements SellerDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			DB.closeStatement(st);
+			DB.closeResultSet(rs);
 		}
 		return null;
 	}
