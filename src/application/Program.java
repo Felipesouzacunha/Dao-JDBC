@@ -28,10 +28,16 @@ public class Program {
 		list = sellerDao.findAll();
 		list.forEach(System.out::println);
 		
-		System.out.println("\n===== TEST 3: seller insert =====");
-		Seller newSeller = new Seller(null, "Grege", "grag@gmail.com", new Date(), 4000.0, department);
-		sellerDao.insert(newSeller);
-		System.out.println("Inserted! new id = " + newSeller.getId());
+//		System.out.println("\n===== TEST 4: seller insert =====");
+//		Seller newSeller = new Seller(null, "Grege", "grag@gmail.com", new Date(), 4000.0, department);
+//		sellerDao.insert(newSeller);
+//		System.out.println("Inserted! new id = " + newSeller.getId());
+		
+		System.out.println("\n===== TEST 5: seller insert =====");
+		seller = sellerDao.findById(1);
+		seller.setName("Maria waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed!");
 	}
 
 }
